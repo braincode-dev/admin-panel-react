@@ -1,0 +1,23 @@
+{
+  "heroes": [
+    {
+      "id": 12,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 13,
+      "name": "New hero",
+      "description": "I can fith",
+      "element": "water"
+    }
+  ],
+  "filters": [
+    "all",
+    "fire",
+    "water",
+    "wind",
+    "earth"
+  ]
+}
