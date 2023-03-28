@@ -32,7 +32,7 @@ const HeroesAddForm = () => {
         request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
             .then(console.log('Created!'))
             .then(dispatch(heroCreated(newHero)))
-            .catch(err => console.log(err));
+            .catch(err => console.log(err));  
     }
 
     return (

@@ -8,16 +8,54 @@
     },
     {
       "id": 13,
-      "name": "New hero",
-      "description": "I can fith",
+      "name": "Next fire",
+      "description": "asdasasd asdasd 44",
+      "element": "fire"
+    },
+    {
+      "id": 14,
+      "name": "asda",
+      "description": "asdasd",
       "element": "water"
+    },
+    {
+      "id": 15,
+      "name": "asdasdasd",
+      "description": "asdasdasd",
+      "element": "wind"
+    },
+    {
+      "id": 16,
+      "name": "asdasda",
+      "description": "asdasasdasd",
+      "element": "fire"
     }
   ],
   "filters": [
-    "all",
-    "fire",
-    "water",
-    "wind",
-    "earth"
+    {
+      "name": "all",
+      "label": "Всі",
+      "className": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "className": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "className": "btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Ветер",
+      "className": "btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "className": "btn-secondary"
+    }
   ]
 }
