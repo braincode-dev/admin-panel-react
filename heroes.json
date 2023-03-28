@@ -7,28 +7,16 @@
       "element": "fire"
     },
     {
-      "id": 13,
-      "name": "Next fire",
-      "description": "asdasasd asdasd 44",
-      "element": "fire"
-    },
-    {
-      "id": 14,
-      "name": "asda",
-      "description": "asdasd",
+      "id": "5242c060-8ef8-4a2f-9886-e74be1ab1c50",
+      "name": "asdasd",
+      "description": "asdasdasd",
       "element": "water"
     },
     {
-      "id": 15,
-      "name": "asdasdasd",
-      "description": "asdasdasd",
+      "id": "eca1a759-4859-471d-9f5d-bedd6d6d8bd0",
+      "name": "Emmit",
+      "description": "I can swim",
       "element": "wind"
-    },
-    {
-      "id": 16,
-      "name": "asdasda",
-      "description": "asdasasdasd",
-      "element": "fire"
     }
   ],
   "filters": [

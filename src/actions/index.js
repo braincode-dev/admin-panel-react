@@ -37,6 +37,12 @@ export const filtersFetching = () => {
     }
 }
 
+export const filtersFetchingError = () => {
+    return {
+        type: 'FILTERS_FETCHING_ERROR'
+    }
+}
+
 export const filtersFetched = (data) => {
     return {
         type: 'FILTERS_FETCHED',

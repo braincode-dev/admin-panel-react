@@ -1,7 +1,7 @@
 import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filtersFetching, filtersFetched, changeFilterActive } from '../../actions/index';
+import { filtersFetching, filtersFetchingError, filtersFetched, changeFilterActive } from '../../actions/index';
 import Spiner from '../spinner/Spinner';
 
 // Задача для этого компонента:
@@ -13,7 +13,7 @@ import Spiner from '../spinner/Spinner';
 
 const HeroesFilters = () => {
 
-    const { filters, activeFilter, filtersLoadingStatus } = useSelector(state => state);
+    const { filters, activeFilter, filtersLoadingStatus } = useSelector(state => state.filtersReducer);
     const { request } = useHttp();
     const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ const HeroesFilters = () => {
         dispatch(filtersFetching());
         request("http://localhost:3001/filters")
             .then(data => dispatch(filtersFetched(data)))
-            .catch(err => console.log(err))
+            .catch(dispatch(filtersFetchingError()))
     }, [])
 
     const onChangeActiveFilter = (value) => {
@@ -45,7 +45,6 @@ const HeroesFilters = () => {
         });
     }
 
-    console.log(filtersLoadingStatus);
     if(filtersLoadingStatus === 'loading'){
         return <Spiner/>;
     }
