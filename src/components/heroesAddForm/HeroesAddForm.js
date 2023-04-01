@@ -7,22 +7,12 @@ import { useHttp } from '../../hooks/http.hook';
 import { heroCreated } from "../../actions";
 import './HeroesAddForm.scss';
 
-// Задача для этого компонента:
-// Реализовать создание нового героя с введенными данными. Он должен попадать
-// в общее состояние и отображаться в списке + фильтроваться
-// Уникальный идентификатор персонажа можно сгенерировать через uiid
-// Усложненная задача:
-// Персонаж создается и в файле json при помощи метода POST
-// Дополнительно:
-// Элементы <option></option> желательно сформировать на базе
-// данных из фильтров
-
 const HeroesAddForm = () => {
     const {request} = useHttp();
     const dispatch = useDispatch();
     const { filters, filtersLoadingStatus } = useSelector(state => state.filtersReducer);
 
-    const onSubmit = (value, actions) => {
+    const onSubmit = async (value, resetForm) => {
         const newHero = {
             id: uuidv4(),
             name: value.name,
@@ -30,12 +20,12 @@ const HeroesAddForm = () => {
             element: value.element
         };
 
-        request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
+        await request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(newHero))
             .then(console.log('Created!'))
             .then(dispatch(heroCreated(newHero)))
             .catch(err => console.log(err));  
 
-        actions.setSubmitting(false);    
+        resetForm();    
              
     }
 
@@ -64,8 +54,8 @@ const HeroesAddForm = () => {
                 text: Yup.string().required('This Field is Required').min(5, 'Short!'),
                 element: Yup.string().required('This Field is Required')
             })}
-            onSubmit={(values) => { 
-                onSubmit(values);
+            onSubmit={(values, {resetForm}) => { 
+                onSubmit(values, resetForm);
             }}
         >
         {({isSubmitting}) => (

@@ -7,16 +7,16 @@
       "element": "fire"
     },
     {
-      "id": "5242c060-8ef8-4a2f-9886-e74be1ab1c50",
-      "name": "asdasd",
-      "description": "asdasdasd",
-      "element": "water"
-    },
-    {
       "id": "eca1a759-4859-471d-9f5d-bedd6d6d8bd0",
       "name": "Emmit",
       "description": "I can swim",
       "element": "wind"
+    },
+    {
+      "id": "9f902a7d-891a-49a1-a26e-f4f79553ecb5",
+      "name": "asdasd",
+      "description": "asdasdasd",
+      "element": "fire"
     }
   ],
   "filters": [
